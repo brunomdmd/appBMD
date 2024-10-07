@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 =======
 # Teste DevOps | Bruno Martins Damasceno
 
