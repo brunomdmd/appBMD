@@ -42,17 +42,7 @@ aws_secret_access_key=SEU_SECRET_ACCESS_KEY
 ```
 
 
-## 3. Configurar um Arquivo "credentials" na Raiz do Projeto
-
-Na raiz do projeto clonado, crie um arquivo chamado credentials e adicione as credenciais do usuário "App" (imaginando que ela esteja salva num cofre. Esss usuário tem permissões apenas de List e Read no ECS que são usados no Projeto):
-
-```bash
-[default]
-aws_access_key_id=SEU_ACCESS_KEY
-aws_secret_access_key=SEU_SECRET_ACCESS_KEY
-```
-
-## 4. Navegar para a Pasta /IaC
+## 3. Navegar para a Pasta /IaC
 
 Mude para o diretório onde o Terraform está localizado:
 
@@ -60,7 +50,7 @@ Mude para o diretório onde o Terraform está localizado:
 cd /IaC
 ```
 
-## 5. Executar os Comandos do Terraform
+## 4. Executar os Comandos do Terraform
 
 Agora você pode usar o Terraform para planejar e aplicar suas configurações:
 
@@ -70,6 +60,6 @@ terraform plan --out=plano
 terraform apply "plano"
 ```
 
-## 6. Acessar a aplicação
+## 5. Acessar a aplicação
 
 Após o provisionamento ser feito, um output com a URL do Loab Balancer será mostrado, pode acessa-lo pelo brownser.
