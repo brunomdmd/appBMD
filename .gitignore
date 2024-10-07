@@ -2,4 +2,5 @@ credentials
 IaC/.terraform/
 IaC/.terraform/*
 IaC/.terraform.lock.hcl
+IaC/terraform.tfstate
 IaC/plano

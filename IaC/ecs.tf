@@ -36,7 +36,7 @@ resource "aws_ecs_task_definition" "PRD-BMD" {
 
   container_definitions = jsonencode([{
     name      = "PRD-BMD"
-    image     = "961341509182.dkr.ecr.us-east-1.amazonaws.com/meu_app_tectoy:2.7"
+    image     = "961341509182.dkr.ecr.us-east-1.amazonaws.com/meu_app_tectoy:3.0"
     essential = true
     portMappings = [{
       containerPort = 80
