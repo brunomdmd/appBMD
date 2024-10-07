@@ -1,0 +1,5 @@
+credentials
+IaC/.terraform/
+IaC/.terraform/*
+IaC/.terraform.lock.hcl
+IaC/plano
