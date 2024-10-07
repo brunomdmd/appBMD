@@ -44,7 +44,7 @@ aws_secret_access_key=SEU_SECRET_ACCESS_KEY
 
 ## 3. Configurar um Arquivo "credentials" na Raiz do Projeto
 
-Na raiz do projeto clonado, crie um arquivo chamado credentials e adicione as credenciais do usuário "App" (que possui permissões apenas de List e Read no ECS que são usados no Projeto):
+Na raiz do projeto clonado, crie um arquivo chamado credentials e adicione as credenciais do usuário "App" (imaginando que ela esteja salva num cofre. Esss usuário tem permissões apenas de List e Read no ECS que são usados no Projeto):
 
 ```bash
 [default]
