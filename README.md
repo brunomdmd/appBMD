@@ -21,16 +21,55 @@ Infelizmente, não consegui concluir a parte referente ao **backend (API)** e ao
 
 Durante o teste, utilizei uma ferramenta de automação desenvolvida por mim mesmo, chamada **[EasyMFA-CredentialsAWS](https://github.com/brunomdmd/EasyMFA-CredentialsAWS)**, que facilita a autenticação com MFA na AWS, agilizando o processo de push para o **Amazon ECR (Elastic Container Registry)**.
 
-#### Procedimento para push no ECR:
+### Executando o Projeto
 
-1. Execute o comando de login no ECR:
-   ```bash
-   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com
+## 1. Clonar o Projeto
 
-2. Marque a imagem com a nova tag:
-   ```bash
-   docker tag ECRNAME:VERSION 123456789012.dkr.ecr.us-east-1.amazonaws.com/ECRNAME:VERSION:VERSION
+Para clonar o projeto, abra o terminal e execute o seguinte comando:
 
-1. Faça o push da imagem para o ECR:
-   ```bash
-   docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/ECRNAME:VERSION:VERSION
+```bash
+git clone https://github.com/brunomdmd/appBMD
+```
+
+## 2. Configurar Credenciais para Acesso ao terraform.tfstate no S3
+
+Criar ou editar o arquivo de credenciais: Abra ou crie o arquivo ~/.aws/credentials e adicione o seguinte conteúdo:
+
+```bash
+[default]
+aws_access_key_id=SEU_ACCESS_KEY
+aws_secret_access_key=SEU_SECRET_ACCESS_KEY
+```
+
+
+## 3. Configurar um Arquivo "credentials" na Raiz do Projeto
+
+Na raiz do projeto clonado, crie um arquivo chamado credentials e adicione as credenciais do usuário "App" (que possui permissões apenas de List e Read no ECS que são usados no Projeto):
+
+```bash
+[default]
+aws_access_key_id=SEU_ACCESS_KEY
+aws_secret_access_key=SEU_SECRET_ACCESS_KEY
+```
+
+## 4. Navegar para a Pasta /IaC
+
+Mude para o diretório onde o Terraform está localizado:
+
+```bash
+cd /IaC
+```
+
+## 5. Executar os Comandos do Terraform
+
+Agora você pode usar o Terraform para planejar e aplicar suas configurações:
+
+```bash
+terraform init
+terraform plan --out=plano
+terraform apply "plano"
+```
+
+## 6. Acessar a aplicação
+
+Após o provisionamento ser feito, um output com a URL do Loab Balancer será mostrado, pode acessa-lo pelo brownser.
